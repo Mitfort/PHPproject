@@ -16,15 +16,17 @@
                     LOGIN
                 </legend>
 
-                <div class="form-row">
-                    <input type="email" name="email" id="">
+                <h3 style="color: whitesmoke;">LOGIN:</h3>
+                <div class="form-row" >
+                    <input type="email" name="email" id="" placeholder="Login">
                 </div>
 
+                <h3 style="color: whitesmoke;">PASSWORD:</h3>
                 <div class="form-row">
-                    <input type="password" name="password" id="">
+                    <input type="password" name="password" id="" placeholder="Password">
                 </div>
 
-                <button type="button"> SIGN </button>
+                <button type="button" class="btn btn-primary"> SIGN IN</button>
 
             </fieldset>
 

@@ -6,16 +6,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("./assets/5073414.jpg");
+    background-position: center;
+    background-size: contain;
+
+}
+
+@font-face {
+	font-family: raleway_f;
+	src: url(/assets/raleway-black.woff2);
 }
 
 .login-container {
-    width: 70%;
+    width: 30%;
     height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
-    background-color: black;
+    background-color: transparent;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);  
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    overflow: hidden;
+     border: 1px solid whitesmoke;
+     font-family: raleway_f;
 }
 
 fieldset {
@@ -23,46 +35,83 @@ fieldset {
     height: 100%;
     display: flex;
     border-radius: 10px;
-    border: 1px solid whitesmoke;
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 legend {
-    margin-top: 50px;
     text-align: center;
-    margin-bottom: 50px;
     color: whitesmoke;
+    letter-spacing: 5px;
+    margin-bottom: 100px;
+}
+
+h3 {
+    width: 55%;
+    font-size: 20px;
 }
 
 
 form {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
 }
 
-form div {
+form h1 {
+    color: blanchedalmond;
+}
+
+#second {
+    left: 600px;
+}
+
+.form-row {
     border: 1px solid whitesmoke;
     margin-bottom: 20px;
     display: flex;
     border-radius: 15px;
     width: 60%;
+    height: 15%;
     overflow: hidden;
+   align-items: center;
 }
 
 form div input {
     background-color: transparent;
     border: none;
     outline: none;
+    color: whitesmoke;
     width: 80%;
     height: 100%;
-    margin-right: 50px;
+    font-size: 30px;
 }
+
 
 form button {
     border: none;
     border-radius: 15px;
     width: 40%;
     background-color: whitesmoke;
+}
+
+.lock {
+    background-color: whitesmoke;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    display: block;
+    background: 'mdi mdi-24px mdi-clock-outline' no-repeat;
+    width: 24px;
+    height: 24px;
+    
 }
