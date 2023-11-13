@@ -14,7 +14,7 @@ body {
 
 @font-face {
 	font-family: raleway_f;
-	src: url(/assets/raleway-black.woff2);
+	src: url("./assets/raleway-black.woff2");
 }
 
 .login-container {
