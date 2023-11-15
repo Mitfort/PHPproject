@@ -31,7 +31,7 @@
     ?>
 
     <?php
-    include("header.html");
+    include("header.php");
     
     ?>
 
@@ -109,7 +109,7 @@
 
                         $res = mysqli_query($connection,$query);
 
-                        if($res){
+                        if(mysqli_num_rows($res) == 1){
 
                             $row = mysqli_fetch_assoc($res);
 
@@ -130,6 +130,9 @@
                 
                             </form>
                             ";
+                        }
+                        else {
+                            echo "<script>alert('Nie ma cwaniaka na te zabezpieczenia')</script>";
                         }
 
                     }

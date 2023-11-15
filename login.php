@@ -60,7 +60,7 @@
                 exit(); 
             }
 
-            $query = "SELECT * FROM users WHERE login='{$login}' AND password='{$password}'";
+            $query = "SELECT * FROM users JOIN profileimages ON users.userID = profileimages.userID WHERE login='{$login}' AND password='{$password}'";
 
             $res = mysqli_query($connection,$query);
 
@@ -74,7 +74,9 @@
                                             "first_name" => $row['first_name'],
                                             "last_name"=> $row['last_name'],
                                             "email" => $row['email'],
-                                            "birthday" => $row['birthday']];
+                                            "birthday" => $row['birthday'],
+                                            "photoID" => $row['photoID']
+                                        ];
 
 
                 unset($_POST['login']);

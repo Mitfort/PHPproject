@@ -16,14 +16,30 @@
               <li><a href="createPost.php" class="nav-link px-2 link-body-emphasis">Create Post</a></li>
               <li><a href="editPost.php" class="nav-link px-2 link-body-emphasis">Edit Post</a></li>
             </ul>
-    
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
+
+            <?php
+
+              $connection = mysqli_connect("localhost","root","","phpprojekcik");
+
+              if(!$connection){
+                echo "NO ja nie wiem";
+                exit();
+              }
+
+              $query = "SELECT data FROM profileImages WHERE photoID = '{$_SESSION['currentUser']['photoID']}'";
+
+              $res = mysqli_query($connection,$query);
+
+              $row = mysqli_fetch_assoc($res);
+
+            ?>
     
             <div class="dropdown text-end">
               <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <?php
+                  echo "<img src='data:image/jpg;base64," . base64_encode($row['data']) . "' alt='xd' width='48' height='48' class='rounded-circle'>";
+                ?>
+                <!-- <img src= alt="mdo" width="32" height="32" class="rounded-circle"> -->
               </a>
               <ul class="dropdown-menu text-small">
                 <li><a class="dropdown-item" href="profile.php">Profile</a></li>
